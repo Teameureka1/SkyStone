@@ -33,12 +33,9 @@ public class HardwareSetup {
     public DcMotor linearSlide = null;
 
     //servos
-    public Servo servoHandL = null;
-    public Servo servoHandR = null;
-    public Servo crServo    = null;
 
     //sensors
-    public GyroSensor gyro  = null;
+
 
     /* local OpMode members. */
     HardwareMap hwMap        = null;
@@ -86,22 +83,18 @@ public class HardwareSetup {
          * SERVO SECTION
          ************************************************************/
         // Define Motors to match Robot Configuration File
-        servoHandL = hwMap.servo.get("servoHandL");
-        servoHandR = hwMap.servo.get("servoHandR");
-        crServo    = hwMap.servo.get("crServo");
+
 
         //Set servo hand grippers to open position.
-        servoHandL.setPosition(OPEN);
-        servoHandR.setPosition(OPEN);
 
         //Continous Rotation Servo
-        crServo.setPosition(STOP);
+
 
         /************************************************************
          * SENSOR SECTION
          ************************************************************/
         //Define sensors
-        gyro = hwMap.gyroSensor.get("gyro");
+
    }
 
 }

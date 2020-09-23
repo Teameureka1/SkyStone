@@ -21,7 +21,7 @@ import org.firstinspires.ftc.teamcode.ExampleCode.MyBotHardwareSetup;
  */
 
 @TeleOp(name="Example: LinearSlideTest", group="Examples")  // @Autonomous(...) is the other common choice
-@Disabled
+//@Disabled
 public class LinearSlideTest extends LinearOpMode {
 
     HardwareSetup robot = new HardwareSetup(); //set up remote to robot hardware configuration
