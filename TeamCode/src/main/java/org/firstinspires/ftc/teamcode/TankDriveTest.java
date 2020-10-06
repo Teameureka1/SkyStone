@@ -20,9 +20,9 @@ import org.firstinspires.ftc.teamcode.ExampleCode.MyBotHardwareSetup;
  * Comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Example: LinearSlideTest", group="Examples")  // @Autonomous(...) is the other common choice
+@TeleOp(name="Example: Test", group="Examples")  // @Autonomous(...) is the other common choice
 //@Disabled
-public class LinearSlideTest extends LinearOpMode {
+public class TankDriveTest extends LinearOpMode {
 
     HardwareSetup robot = new HardwareSetup(); //set up remote to robot hardware configuration
 
@@ -57,35 +57,26 @@ public class LinearSlideTest extends LinearOpMode {
             telemetry.update();
 
             // tank drive set drive motor powers to Y-stick value
-           /* robot.motorLeft.setPower(gamepad1.left_stick_y);
+            robot.motorLeft.setPower(-gamepad1.left_stick_y);
             robot.motorRight.setPower(gamepad1.right_stick_y);
-*/
-             //Arm Control - Uses dual buttons to control motor direction
-            if(gamepad1.right_bumper)
-            {
-                robot.linearSlide.setPower(-gamepad1.right_trigger);
-            }
 
-            else
-            {
-                robot.linearSlide.setPower(gamepad1.right_trigger);
-            }
-           /* if(gamepad1.right_bumper) {
-                robot.motorArm.setPower(-gamepad1.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
+            // Arm Control - Uses dual buttons to control motor direction
+            if(gamepad1.right_bumper) {
+                 // if both Bumper + Trigger, then negative power, runs arm down
             }
             else {
-                robot.motorArm.setPower(gamepad1.right_trigger);  // else trigger positive value, runs arm up
+
             }
-*/
+
             //servo commands
-            /*if(gamepad1.a) {
-                robot.servoHandR.setPosition(robot.OPEN);  // Note: to change position value, go to HardwareSetup, or create new value or variable in this OpMode
-                robot.servoHandL.setPosition(robot.OPEN);
+            if(gamepad1.a)
+            {
+
             }
-            else if (gamepad1.b) {
-                robot.servoHandR.setPosition(robot.CLOSED);
-                robot.servoHandL.setPosition(robot.CLOSED);
-            } */
+            else if (gamepad1.b)
+            {
+
+            }
 
             idle(); // Allows other parallel processes to run before loop repeats
         }

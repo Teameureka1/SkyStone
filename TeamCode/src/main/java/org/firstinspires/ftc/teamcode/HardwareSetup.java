@@ -30,9 +30,12 @@ public class HardwareSetup {
     */
 
     //motors
-    public DcMotor linearSlide = null;
+    public DcMotor motorRight = null;
+    public DcMotor motorLeft = null;
+
 
     //servos
+
 
     //sensors
 
@@ -65,18 +68,26 @@ public class HardwareSetup {
          * MOTOR SECTION
          ************************************************************/
         // Define Motors to match Robot Configuration File
-        linearSlide = hwMap.dcMotor.get("LinearSlide");
+        motorRight = hwMap.dcMotor.get("motorRight");
+        motorLeft = hwMap.dcMotor.get("motorLeft");
+
 
         // Set the drive motor directions:
-        linearSlide.setDirection(DcMotor.Direction.FORWARD);
+        motorRight.setDirection(DcMotor.Direction.FORWARD);
+        motorLeft.setDirection(DcMotor.Direction.FORWARD);
+
 
         //Keep the motors from moving during initialize.
-        linearSlide.setPower(MOTOR_STOP);
+        motorRight.setPower(MOTOR_STOP);
+        motorLeft.setPower(MOTOR_STOP);
+
 
 
         // Set motors to run USING or WITHOUT encoders
         // Depending upon your configuration and use
-        linearSlide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        motorLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
 
         /************************************************************
@@ -85,9 +96,11 @@ public class HardwareSetup {
         // Define Motors to match Robot Configuration File
 
 
+
         //Set servo hand grippers to open position.
 
-        //Continous Rotation Servo
+
+
 
 
         /************************************************************
